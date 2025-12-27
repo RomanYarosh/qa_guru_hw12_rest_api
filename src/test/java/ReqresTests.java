@@ -11,8 +11,9 @@ public class ReqresTests extends BaseTest {
     public void getListUsersTest() {
         given()
                 .log().uri()
+                .queryParam("page", "2")
                 .when()
-                .get("/users?page=2")
+                .get("/users")
                 .then()
                 .log().status()
                 .statusCode(200)
